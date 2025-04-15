@@ -13,7 +13,7 @@ const Intro = () => {
                         </div>
                         <div className="flex-col my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-1/2 px-8" data-aos="zoom-in" data-aos-delay="500">
                             
-                            <h3 className="text-3xl  text-blue-900 font-bold">The largest network of independent distributors use Vendaigigi to boost basket size and strengthen customer relationships</h3>
+                            <h3 className="text-3xl  text-blue-900 font-bold">The largest network of independent distributors use Vendai to boost basket size and strengthen customer relationships</h3>
                             <div>
                                 <p className='my-3 text-xl text-gray-600 font-semibold'>Vendai’s suite of products give independent distributors and manufacturers everything they need to drive operator revenue growth and predictably raise profits.</p>
                             </div>

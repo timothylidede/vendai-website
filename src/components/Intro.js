@@ -13,13 +13,9 @@ const Intro = () => {
                         </div>
                         <div className="flex-col my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-1/2 px-8" data-aos="zoom-in" data-aos-delay="500">
                             
-                            <h3 className="text-3xl  text-blue-900 font-bold">The largest network of independent distributors use Vendai to boost basket size and strengthen customer relationships</h3>
+                            <h3 className="text-3xl  text-blue-900 font-bold">The largest network of independent distributors use VendAI to boost basket size and strengthen customer relationships</h3>
                             <div>
                                 <p className='my-3 text-xl text-gray-600 font-semibold'>VendAI provides digital tools that work where your customers are: on WhatsApp. Our suite helps you manage orders, automate deliveries, and boost repeat business — all from one dashboard.</p>
-                            </div>
-                            
-                            <div>
-                                <p className='my-3 text-xl text-gray-600 font-semibold'>Our customers increase their average order size by 23%. Learn how we can do the same for you.</p>
                             </div>
                             <Link to="/contact" className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-2 my-4 text-lg shadow-xl rounded-2xl sm:w-auto sm:mb-0 group">
                                 Contact us

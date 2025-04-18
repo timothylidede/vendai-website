@@ -15,7 +15,7 @@ const Intro = () => {
                             
                             <h3 className="text-3xl  text-blue-900 font-bold">The largest network of independent distributors use Vendai to boost basket size and strengthen customer relationships</h3>
                             <div>
-                                <p className='my-3 text-xl text-gray-600 font-semibold'>Vendai’s suite of products give independent distributors and manufacturers everything they need to drive operator revenue growth and predictably raise profits.</p>
+                                <p className='my-3 text-xl text-gray-600 font-semibold'>VendAI provides digital tools that work where your customers are: on WhatsApp. Our suite helps you manage orders, automate deliveries, and boost repeat business — all from one dashboard.</p>
                             </div>
                             
                             <div>

@@ -62,7 +62,7 @@ export default function Home() {
             className="flex items-center gap-2"
           >
             <span className="text-2xl tracking-tighter font-extralight">
-              vend<span className="font-normal">AI</span>
+              vend<span className="font-normal">ai</span>
             </span>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl font-extralight text-white/70 max-w-2xl mb-12 leading-relaxed">
-              VendAI provides customized cloud-based solutions for Kenyan FMCG distributors, automating inventory,
+              vendai provides customized cloud-based solutions for Kenyan FMCG distributors, automating inventory,
               sales, billing, and delivery routes to boost efficiency and sales.
             </p>
 
@@ -244,7 +244,7 @@ export default function Home() {
               Tailored for Kenyan FMCG Distributors
             </h2>
             <p className="text-white/70 leading-relaxed">
-              VendAI is a customizable platform designed specifically for Kenyan FMCG distributors. Each distributor
+              vendai is a customizable platform designed specifically for Kenyan FMCG distributors. Each distributor
               gets their own personalized version, accessible via their unique subdomain (e.g.,
               homecomforts.vendai.digital).
             </p>
@@ -257,7 +257,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-light mb-6">Why Choose VendAI?</h3>
+              <h3 className="text-2xl font-light mb-6">Why Choose vendai?</h3>
               <ul className="space-y-6">
                 {[
                   {
@@ -268,7 +268,7 @@ export default function Home() {
                   {
                     title: "Affordable Solution",
                     description:
-                      "Starting at just $10/month, VendAI is designed to be accessible for distributors of all sizes.",
+                      "Starting at just $10/month, vendai is designed to be accessible for distributors of all sizes.",
                   },
                   {
                     title: "Mobile-First Approach",
@@ -317,7 +317,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-light mb-4">Proven Results</h3>
                 <p className="text-white/70 mb-6">
-                  Distributors using VendAI have experienced up to 20% sales growth and 25% reduction in stockouts.
+                  Distributors using vendai have experienced up to 20% sales growth and 25% reduction in stockouts.
                 </p>
                 <div className="grid grid-cols-2 gap-8 w-full max-w-xs">
                   <div>
@@ -450,8 +450,8 @@ export default function Home() {
                 Customized for Each Distributor
               </h2>
               <p className="text-white/70 mb-8 leading-relaxed">
-                Each distributor gets their own version of VendAI, tailored to their specific products, workflows, and
-                markets. Whether you distribute tea, snacks, or beverages, your VendAI platform will be configured to
+                Each distributor gets their own version of vendai, tailored to their specific products, workflows, and
+                markets. Whether you distribute tea, snacks, or beverages, your vendai platform will be configured to
                 meet your unique needs.
               </p>
 
@@ -692,7 +692,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-extralight tracking-tighter mb-8">Get Started Today</h2>
               <p className="text-white/70 mb-10 leading-relaxed">
                 Ready to transform your distribution business? Contact us to schedule a demo or start your 30-day free
-                trial. Our team will help customize VendAI for your specific products and markets.
+                trial. Our team will help customize vendai for your specific products and markets.
               </p>
 
               <div className="space-y-6 mb-10">
@@ -729,7 +729,7 @@ export default function Home() {
               <div className="border border-white/10 p-6">
                 <h3 className="text-xl font-light mb-4">Success Story: Home Comforts</h3>
                 <p className="text-white/70 mb-4">
-                  "VendAI has transformed our tea distribution business. We've seen a 20% increase in sales and 25%
+                  "vendai has transformed our tea distribution business. We've seen a 20% increase in sales and 25%
                   fewer stockouts since implementation. The customized platform perfectly fits our unique product
                   catalog and export requirements."
                 </p>
@@ -853,7 +853,7 @@ export default function Home() {
 
           <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/50 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} VendAI. All rights reserved.
+              © {new Date().getFullYear()} vendai. All rights reserved.
             </p>
 
             <div className="flex items-center gap-6">

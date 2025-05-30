@@ -574,7 +574,7 @@ export default function Home() {
             {[
               {
                 name: "Basic",
-                price: "$10",
+                price: "KES 5,000",
                 description: "Perfect for small distributors just getting started",
                 features: [
                   "Customized platform",
@@ -589,7 +589,7 @@ export default function Home() {
               },
               {
                 name: "Pro",
-                price: "$25",
+                price: "KES 7,500",
                 description: "Ideal for growing distributors with expanding operations",
                 features: [
                   "Everything in Basic",

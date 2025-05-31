@@ -268,7 +268,7 @@ export default function Home() {
                   {
                     title: "Affordable Solution",
                     description:
-                      "Starting at just $10/month, vendai is designed to be accessible for distributors of all sizes.",
+                      "Starting at just KES 5,000/month, vendai is designed to be accessible for distributors of all sizes.",
                   },
                   {
                     title: "Mobile-First Approach",

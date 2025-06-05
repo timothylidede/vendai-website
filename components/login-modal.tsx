@@ -121,7 +121,7 @@ export default function LoginModal({ onClose }: LoginModalProps) {
 
           // Redirect after showing success message
           setTimeout(() => {
-            window.location.href = "https://demo.vendai.digital"
+            window.location.replace("https://demo.vendai.digital")
           }, 1500)
         } else {
           // Check if it's a valid subdomain format but wrong credentials

@@ -1,7 +1,9 @@
 "use client"
 
+import type React from "react"
+
 import { motion } from "framer-motion"
-import { X, AlertCircle, CheckCircle } from 'lucide-react'
+import { X, AlertCircle, CheckCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 
@@ -163,17 +165,16 @@ export default function LoginModal({ onClose }: LoginModalProps) {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="bg-white p-8 max-w-md w-full rounded-lg shadow-2xl"
+        className="bg-black border border-white/20 p-8 max-w-md w-full rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-extralight tracking-tight">
-            {isLogin ? "Login to " : "Sign up for "}
-            <span className="font-normal">VendAI</span>
+          <h2 className="text-2xl font-extralight tracking-tight text-white">
+            {isLogin ? "Login" : "Sign up"}
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-black transition-colors p-1"
+            className="text-white/50 hover:text-white transition-colors p-1"
             disabled={isLoading}
           >
             <X size={24} />
@@ -182,10 +183,10 @@ export default function LoginModal({ onClose }: LoginModalProps) {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="subdomain" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="subdomain" className="block text-sm font-medium text-white/70 mb-1">
               Company Subdomain
             </label>
-            <div className="flex rounded-md shadow-sm">
+            <div className="flex rounded-md">
               <input
                 type="text"
                 id="subdomain"
@@ -193,9 +194,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
                 value={subdomain}
                 onChange={(e) => setSubdomain(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ""))}
                 disabled={isLoading}
-                className="flex-1 border border-gray-300 rounded-l-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all placeholder:text-gray-400 disabled:bg-gray-50"
+                className="flex-1 bg-transparent border border-white/20 rounded-l-md py-3 px-3 text-white focus:outline-none focus:border-white/50 transition-all placeholder:text-white/40 disabled:opacity-50"
               />
-              <div className="bg-gray-50 border border-gray-300 border-l-0 rounded-r-md px-3 py-3 text-gray-500 text-sm flex items-center">
+              <div className="bg-white/10 border border-white/20 border-l-0 rounded-r-md px-3 py-3 text-white/50 text-sm flex items-center">
                 .vendai.digital
               </div>
             </div>
@@ -203,7 +204,7 @@ export default function LoginModal({ onClose }: LoginModalProps) {
 
           {!isLogin && (
             <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="fullName" className="block text-sm font-medium text-white/70 mb-1">
                 Full Name
               </label>
               <input
@@ -213,13 +214,13 @@ export default function LoginModal({ onClose }: LoginModalProps) {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 disabled={isLoading}
-                className="w-full border border-gray-300 rounded-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all placeholder:text-gray-400 disabled:bg-gray-50"
+                className="w-full bg-transparent border border-white/20 rounded-md py-3 px-3 text-white focus:outline-none focus:border-white/50 transition-all placeholder:text-white/40 disabled:opacity-50"
               />
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-white/70 mb-1">
               Email Address
             </label>
             <input
@@ -229,12 +230,12 @@ export default function LoginModal({ onClose }: LoginModalProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={isLoading}
-              className="w-full border border-gray-300 rounded-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all placeholder:text-gray-400 disabled:bg-gray-50"
+              className="w-full bg-transparent border border-white/20 rounded-md py-3 px-3 text-white focus:outline-none focus:border-white/50 transition-all placeholder:text-white/40 disabled:opacity-50"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="password" className="block text-sm font-medium text-white/70 mb-1">
               Password
             </label>
             <input
@@ -244,25 +245,25 @@ export default function LoginModal({ onClose }: LoginModalProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               disabled={isLoading}
-              className="w-full border border-gray-300 rounded-md py-3 px-3 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all placeholder:text-gray-400 disabled:bg-gray-50"
+              className="w-full bg-transparent border border-white/20 rounded-md py-3 px-3 text-white focus:outline-none focus:border-white/50 transition-all placeholder:text-white/40 disabled:opacity-50"
             />
           </div>
 
           {isLogin && (
             <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 text-sm text-gray-600">
+              <label className="flex items-center gap-2 text-sm text-white/70">
                 <input
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
                   disabled={isLoading}
-                  className="h-4 w-4 text-black focus:ring-black border-gray-300 rounded disabled:opacity-50"
+                  className="h-4 w-4 accent-white border-white/30 rounded disabled:opacity-50"
                 />
                 Remember me
               </label>
               <button
                 type="button"
-                className="text-sm text-gray-500 hover:text-black transition-colors"
+                className="text-sm text-white/70 hover:text-white transition-colors"
                 disabled={isLoading}
               >
                 Forgot password?
@@ -275,10 +276,10 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-md"
+              className="flex items-center gap-2 p-3 bg-red-900/30 border border-red-500/30 rounded-md"
             >
-              <AlertCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
-              <p className="text-sm text-red-700">{error}</p>
+              <AlertCircle className="h-4 w-4 text-red-400 flex-shrink-0" />
+              <p className="text-sm text-red-300">{error}</p>
             </motion.div>
           )}
 
@@ -287,21 +288,21 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-md"
+              className="flex items-center gap-2 p-3 bg-green-900/30 border border-green-500/30 rounded-md"
             >
-              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-              <p className="text-sm text-green-700">{success}</p>
+              <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+              <p className="text-sm text-green-300">{success}</p>
             </motion.div>
           )}
 
           <Button
             type="submit"
             disabled={isLoading}
-            className="bg-black text-white hover:bg-gray-800 w-full py-4 text-sm tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-white text-black hover:bg-white/90 w-full py-4 text-sm tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                 {isLogin ? "SIGNING IN..." : "CREATING ACCOUNT..."}
               </div>
             ) : isLogin ? (
@@ -313,25 +314,15 @@ export default function LoginModal({ onClose }: LoginModalProps) {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-white/50">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <button
               onClick={toggleForm}
               disabled={isLoading}
-              className="text-black hover:underline transition-colors disabled:opacity-50"
+              className="text-white hover:underline transition-colors disabled:opacity-50"
             >
               {isLogin ? "Sign up" : "Login"}
             </button>
-          </p>
-        </div>
-
-        {/* Demo Credentials Helper */}
-        <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
-          <p className="text-xs text-blue-700 font-medium mb-1">Demo Access:</p>
-          <p className="text-xs text-blue-600">
-            Subdomain: <code className="bg-blue-100 px-1 rounded">demo</code> | Email:{" "}
-            <code className="bg-blue-100 px-1 rounded">demo@vendai.digital</code> | Password:{" "}
-            <code className="bg-blue-100 px-1 rounded">1234</code>
           </p>
         </div>
       </motion.div>

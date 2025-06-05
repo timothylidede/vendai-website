@@ -111,7 +111,7 @@ export default function LoginModal({ onClose }: LoginModalProps) {
         if (
           subdomain.toLowerCase() === "demo" &&
           email.toLowerCase() === "demo@vendai.digital" &&
-          password === "VendAI2024Demo!"
+          password === "VendAI2025Demo!"
         ) {
           handleRememberMe(subdomain, email)
           setSuccess("Login successful! Redirecting to your dashboard...")

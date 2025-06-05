@@ -107,11 +107,11 @@ export default function LoginModal({ onClose }: LoginModalProps) {
 
     try {
       if (isLogin) {
-        // Check for demo credentials
+        // Check for demo credentials - Updated with secure demo password
         if (
           subdomain.toLowerCase() === "demo" &&
           email.toLowerCase() === "demo@vendai.digital" &&
-          password === "1234"
+          password === "VendAI2024Demo!"
         ) {
           handleRememberMe(subdomain, email)
           setSuccess("Login successful! Redirecting to your dashboard...")
@@ -170,7 +170,8 @@ export default function LoginModal({ onClose }: LoginModalProps) {
       >
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-extralight tracking-tight text-white">
-            {isLogin ? "Login" : "Sign up"}
+            {isLogin ? "Login to " : "Sign up for "}
+            <span className="font-normal">VendAI</span>
           </h2>
           <button
             onClick={onClose}
@@ -325,6 +326,14 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             </button>
           </p>
         </div>
+
+        {/* Demo credentials info for development - remove in production */}
+        {process.env.NODE_ENV === "development" && (
+          <div className="mt-4 p-3 bg-blue-900/30 border border-blue-500/30 rounded-md">
+            <p className="text-xs text-blue-300 font-medium mb-1">Demo Access (Dev Only):</p>
+            <p className="text-xs text-blue-400">demo / demo@vendai.digital / VendAI2025Demo!</p>
+          </div>
+        )}
       </motion.div>
     </motion.div>
   )

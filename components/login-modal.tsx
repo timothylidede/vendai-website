@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { X } from "lucide-react"
 import { useState } from "react"
-import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
 
 interface LoginModalProps {
@@ -11,7 +10,6 @@ interface LoginModalProps {
 }
 
 export default function LoginModal({ onClose }: LoginModalProps) {
-  const router = useRouter()
   const [isLogin, setIsLogin] = useState(true)
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
@@ -27,24 +25,22 @@ export default function LoginModal({ onClose }: LoginModalProps) {
     e.preventDefault()
     setError("")
 
-    if (isLogin) {
-      // Only allow demo@vendai.digital / 1234
-      if (email === "demo@vendai.digital" && password === "1234") {
-        window.location.href = "https://demo.vendai.digital"
-      } else {
-        setError("Invalid email or password.")
-      }
+    // Check for demo credentials in both login and sign-up modes
+    if (email === "demo@vendai.digital" && password === "1234" && (isLogin || fullName === "demo")) {
+      window.location.href = "https://demo.vendai.digital"
     } else {
-      // Sign up flow (for now, just display a message)
-      if (!fullName.trim() || !email.trim() || !password.trim()) {
-        setError("All fields are required for sign up.")
+      if (isLogin) {
+        setError("Invalid email or password.")
       } else {
-        // Here you’d normally call an API to create a new user.
-        // For this demo, we’ll just switch back to login form.
-        setError("Account created! Please log in.")
-        setIsLogin(true)
-        setFullName("")
-        setPassword("")
+        // Sign up flow validation
+        if (!fullName.trim() || !email.trim() || !password.trim()) {
+          setError("All fields are required for sign up.")
+        } else {
+          setError("Account created! Please log in.")
+          setIsLogin(true)
+          setFullName("")
+          setPassword("")
+        }
       }
     }
   }

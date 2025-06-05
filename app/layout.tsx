@@ -9,7 +9,10 @@ export const metadata = {
   title: "VendAI - Customized Distribution Solutions for Kenyan FMCG",
   description:
     "VendAI provides customized cloud-based solutions for Kenyan FMCG distributors, automating inventory, sales, billing, and delivery routes to boost efficiency and sales.",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+  icons: {
+    icon: "/vendai-logo.jpeg", // Path to your favicon in the public folder
+  },
 }
 
 export default function RootLayout({

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { X } from "lucide-react"
 import { useState } from "react"
+import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
 
 interface LoginModalProps {
@@ -10,9 +11,43 @@ interface LoginModalProps {
 }
 
 export default function LoginModal({ onClose }: LoginModalProps) {
+  const router = useRouter()
   const [isLogin, setIsLogin] = useState(true)
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
 
-  const toggleForm = () => setIsLogin(!isLogin)
+  const toggleForm = () => {
+    setError("")
+    setIsLogin(!isLogin)
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setError("")
+
+    if (isLogin) {
+      // Only allow demo@vendai.digital / 1234
+      if (email === "demo@vendai.digital" && password === "1234") {
+        window.location.href = "https://demo.vendai.digital"
+      } else {
+        setError("Invalid email or password.")
+      }
+    } else {
+      // Sign up flow (for now, just display a message)
+      if (!fullName.trim() || !email.trim() || !password.trim()) {
+        setError("All fields are required for sign up.")
+      } else {
+        // Here you’d normally call an API to create a new user.
+        // For this demo, we’ll just switch back to login form.
+        setError("Account created! Please log in.")
+        setIsLogin(true)
+        setFullName("")
+        setPassword("")
+      }
+    }
+  }
 
   return (
     <motion.div
@@ -27,10 +62,10 @@ export default function LoginModal({ onClose }: LoginModalProps) {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="bg-white p-8 max-w-md w-full"
+        className="bg-white p-8 max-w-md w-full rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-extralight tracking-tight">
             {isLogin ? "Login to " : "Sign up for "}
             <span className="font-normal">VendAI</span>
@@ -40,12 +75,14 @@ export default function LoginModal({ onClose }: LoginModalProps) {
           </button>
         </div>
 
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {!isLogin && (
             <div>
               <input
                 type="text"
                 placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 className="w-full border-b border-gray-300 py-3 px-2 focus:outline-none focus:border-black transition-colors placeholder:text-gray-400"
               />
             </div>
@@ -55,6 +92,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             <input
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               className="w-full border-b border-gray-300 py-3 px-2 focus:outline-none focus:border-black transition-colors placeholder:text-gray-400"
             />
           </div>
@@ -63,6 +103,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
               className="w-full border-b border-gray-300 py-3 px-2 focus:outline-none focus:border-black transition-colors placeholder:text-gray-400"
             />
           </div>
@@ -75,7 +118,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             </div>
           )}
 
-          <Button className="bg-black text-white hover:bg-gray-800 w-full py-6 text-sm tracking-widest">
+          {error && <p className="text-sm text-red-600">{error}</p>}
+
+          <Button type="submit" className="bg-black text-white hover:bg-gray-800 w-full py-4 text-sm tracking-widest">
             {isLogin ? "LOGIN" : "SIGN UP"}
           </Button>
         </form>

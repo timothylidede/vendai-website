@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import LoginModal from "@/components/login-modal"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowRight,
@@ -870,92 +871,7 @@ export default function Home() {
 
       {/* Login Modal */}
       <AnimatePresence>
-        {showLoginModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowLoginModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-black border border-white/20 p-8 max-w-md w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-light">Distributor Login</h2>
-                <button onClick={() => setShowLoginModal(false)} className="text-white/50 hover:text-white">
-                  <X size={24} />
-                </button>
-              </div>
-
-              <form className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="subdomain" className="text-sm text-white/70">
-                    Your Company Subdomain
-                  </label>
-                  <div className="flex">
-                    <input
-                      type="text"
-                      id="subdomain"
-                      placeholder="yourcompany"
-                      className="w-full bg-transparent border border-white/20 p-3 focus:border-white/50 outline-none transition-colors"
-                    />
-                    <div className="bg-white/10 border border-white/20 p-3 border-l-0 text-white/50">
-                      .vendai.digital
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="login-email" className="text-sm text-white/70">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="login-email"
-                    className="w-full bg-transparent border border-white/20 p-3 focus:border-white/50 outline-none transition-colors"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="login-password" className="text-sm text-white/70">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    id="login-password"
-                    className="w-full bg-transparent border border-white/20 p-3 focus:border-white/50 outline-none transition-colors"
-                  />
-                </div>
-                <div className="flex justify-between items-center">
-                  <label className="flex items-center gap-2 text-sm text-white/70">
-                    <input type="checkbox" className="accent-white h-4 w-4" />
-                    Remember me
-                  </label>
-                  <a href="#" className="text-sm text-white/70 hover:text-white">
-                    Forgot password?
-                  </a>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="button"
-                  className="w-full bg-white text-black py-3 hover:bg-white/90 transition-colors"
-                >
-                  Sign In
-                </motion.button>
-                <div className="text-center text-white/50 text-sm">
-                  Don't have an account?{" "}
-                  <a href="#contact" onClick={() => setShowLoginModal(false)} className="text-white hover:underline">
-                    Contact us to get started
-                  </a>
-                </div>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
+        {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
       </AnimatePresence>
     </main>
   )

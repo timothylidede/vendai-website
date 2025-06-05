@@ -1,9 +1,7 @@
 "use client"
 
-import type React from "react"
-
 import { motion } from "framer-motion"
-import { X, AlertCircle, CheckCircle } from "lucide-react"
+import { X, AlertCircle, CheckCircle } from 'lucide-react'
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 

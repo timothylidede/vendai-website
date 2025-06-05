@@ -115,6 +115,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
         ) {
           handleRememberMe(subdomain, email)
           setSuccess("Login successful! Redirecting to your dashboard...")
+          
+          // ✅ Set demo_access cookie
+          document.cookie = "demo_access=valid; path=/; domain=vendai.digital; Secure; SameSite=Strict";
 
           // Redirect after showing success message
           setTimeout(() => {
